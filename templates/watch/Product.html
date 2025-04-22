@@ -1,7 +1,116 @@
-{% extends 'watch/index.html' %}
-{% block title%} product{% endblock %}
-{% load static %}
-
+{% extends 'watch/index.html' %} 
+{% block title%} product{% endblock %} 
+{% load static %} 
 {% block content%}
-<h1>product</h1>
+<div class="warpper">
+  <div class="row justify-content-center align-content-center">
+    <div class="card m-4" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="{%static 'img/product1.jpg'%}"
+        alt="Card image cap"
+      />
+      <div class="card-body text-center">
+        <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
+        <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
+        <p>$ 3,50,000</p>
+      </div>
+    </div>
+
+    <div class="card m-4" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="{%static 'img/product2.jpg'%}"
+        alt="Card image cap"
+      />
+      <div class="card-body text-center">
+        <h6>
+          LONGINES MASTER COLLECTION <br />
+          CHRONOGRAPH
+        </h6>
+        <p class="card-text">
+          L2.859.4.92.6, Automatic watch, Ø 44.00 mm, Stainless steel.
+        </p>
+        <p>$ 2,50,000</p>
+      </div>
+    </div>
+
+    <div class="card m-4" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="{%static 'img/product3.jpg'%}"
+        alt="Card image cap"
+      />
+      <div class="card-body text-center">
+        <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
+        <p class="card-text">
+          L2.773.4.78.3, Automatic watch, Ø 42.00 mm, Stainless steel.
+        </p>
+        <p>$ 3,50,000</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-content-center">
+      <div class="card m-4" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{%static 'img/product4.jpg'%}"
+          alt="Card image cap"
+        />
+        <div class="card-body text-center">
+          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
+          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
+          <p>$ 3,50,000</p>
+        </div>
+      </div>
+
+      <div class="card m-4" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{%static 'img/product5.jpg'%}"
+          alt="Card image cap"
+        />
+        <div class="card-body text-center">
+          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
+          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
+          <p>$ 3,50,000</p>
+        </div>
+      </div>
+
+      <div class="card m-4" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="{%static 'img/product6.jpg'%}"
+          alt="Card image cap"
+        />
+        <div class="card-body text-center">
+          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
+          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
+          <p>$ 3,50,000</p>
+        </div>
+      </div>
+  </div>
+  <div class="row gx-0">
+    <div class="col-12 col-md-6">
+      <a href="#" class="text-decoration-none text-white">
+        <div class="position-relative text-center">
+          <img class="img-fluid w-100" src="{% static 'img/men.jpg' %}" alt="Men">
+          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">MEN</h3>
+        </div>
+      </a>
+    </div>
+    <div class="col-12 col-md-6">
+      <a href="#" class="text-decoration-none text-white">
+        <div class="position-relative text-center">
+          <img class="img-fluid w-100" src="{% static 'img/women.jpg' %}" alt="Women">
+          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">WOMEN</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  
+</div>
+
 {% endblock %}
