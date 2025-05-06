@@ -9,5 +9,9 @@ urlpatterns = [
     path('servises/',servises,name='servises'),
     path('about/',about,name='about'),
     path('contact/',contact,name='contact'),
+    path('login/',login,name='login'),
+    path('signup/',signup,name='signup'),
+    path('submit_register/',submit_register,name='submit_register')
+    
     
 ]

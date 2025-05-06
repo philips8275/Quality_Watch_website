@@ -29,6 +29,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
 .container-fluid img{
     height: 5rem;
     width: 5rem;
@@ -248,4 +249,50 @@
 
 .warpper .text{
     position: absolute;
+}
+.collector{
+    height: 100%;
+    width: 100%;
+
+}
+
+.row img{
+    /* border: 1px solid black; */
+    height: 90%;
+    width: 100%;
+}
+
+.login{
+    height:90%;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.login img{
+    height: 20vh;
+    width: 10vw;
+}
+.login input, .login button{
+    /* padding: 5px;
+    border-radius: 10px; */
+    border-color: #198754;
+}
+
+.register{
+    height: 100%;
+    width: 100%;
+}
+
+.reg{
+    /* border: 1px solid black; */
+    height: 110vh;
+
+}
+
+.reg .img-fluid{
+    height:100vh;
+    width: 100%;
+
 }
