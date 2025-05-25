@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Customer
+from .models import *
 # Create your views here.
 
 def index(request):
@@ -9,11 +9,11 @@ def home(request):
     return render(request, 'watch/home.html')
 
 def product(request):
-    return render(request,'watch/product.html')
+    products = Products.objects.all()
+    return render(request,'watch/product.html', {'products': products})
 
 def servises(request):
     return render(request,'watch/servises.html')
-
 
 def about(request):
     return render(request,'watch/about.html')
@@ -52,4 +52,46 @@ def submit_register(request):
             return render(request,'watch/home.html')
     return render(request,'watch/home.html')
 
-    
+def submit_contact(request):
+    if request.method == "POST":
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        message=request.POST.get("message")
+
+        contact = Contactus(
+            name=name,
+            email=email,
+            message=message,
+        )
+        try:
+            contact.save()
+            return render(request,'watch/contact.html')
+        except:
+            return render(request,'watch/contact.html')
+    return render(request, 'watch/contact.html')
+
+def submit_product(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        image = request.FILES.get("image")
+        stock = request.POST.get("stock")
+        category = request.POST.get("category")
+        brand = request.POST.get("brand")
+
+        product = Products(
+            name=name,
+            price=price,
+            description=description,
+            image=image,
+            stock=stock,
+            category=category,
+            brand=brand
+        )
+        try:
+            product.save()
+            return render(request, 'watch/product.html')
+        except:
+            return render(request, 'watch/product.html')
+    return render(request, 'watch/product.html')

@@ -1,102 +1,31 @@
-{% extends 'watch/index.html' %} 
-{% block title%} product{% endblock %} 
-{% load static %} 
+{% extends 'watch/index.html' %}
+{% block title%} product{% endblock %}
+{% load static %}
 {% block content%}
 <div class="warpper">
-  <div class="row justify-content-center align-content-center">
-    <div class="card m-4" style="width: 18rem">
-      <img
-        class="card-img-top"
-        src="{%static 'img/product1.jpg'%}"
-        alt="Card image cap"
-      />
-      <div class="card-body text-center">
-        <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
-        <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
-        <p>$ 3,50,000</p>
-      </div>
-    </div>
-
-    <div class="card m-4" style="width: 18rem">
-      <img
-        class="card-img-top"
-        src="{%static 'img/product2.jpg'%}"
-        alt="Card image cap"
-      />
-      <div class="card-body text-center">
-        <h6>
-          LONGINES MASTER COLLECTION <br />
-          CHRONOGRAPH
-        </h6>
-        <p class="card-text">
-          L2.859.4.92.6, Automatic watch, Ø 44.00 mm, Stainless steel.
-        </p>
-        <p>$ 2,50,000</p>
-      </div>
-    </div>
-
-    <div class="card m-4" style="width: 18rem">
-      <img
-        class="card-img-top"
-        src="{%static 'img/product3.jpg'%}"
-        alt="Card image cap"
-      />
-      <div class="card-body text-center">
-        <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
-        <p class="card-text">
-          L2.773.4.78.3, Automatic watch, Ø 42.00 mm, Stainless steel.
-        </p>
-        <p>$ 3,50,000</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row justify-content-center align-content-center">
-      <div class="card m-4" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{%static 'img/product4.jpg'%}"
-          alt="Card image cap"
-        />
-        <div class="card-body text-center">
-          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
-          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
-          <p>$ 3,50,000</p>
+  <div class="row justify-content-center align-content-center m-5">
+    {% for product in products%}
+    <div class="col-12 col-md-4 mb-4">
+      <div class="card1 h-80 rounded-3 shadow-sm">
+        <img src="{{ product.image.url }}" class="card-img-top-fluid img-thumbnail" alt="{{ product.name }}">
+        <div class="card-body align-content-center text-center p-2">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+          <a href="{% url 'submit_product' product.id %}" class="btn btn-primary">View Details</a>
         </div>
       </div>
+    </div>
+    {%endfor%}
 
-      <div class="card m-4" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{%static 'img/product5.jpg'%}"
-          alt="Card image cap"
-        />
-        <div class="card-body text-center">
-          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
-          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
-          <p>$ 3,50,000</p>
-        </div>
-      </div>
-
-      <div class="card m-4" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{%static 'img/product6.jpg'%}"
-          alt="Card image cap"
-        />
-        <div class="card-body text-center">
-          <h6>LONGINES MASTER COLLECTION CHRONO MOONPHASE</h6>
-          <p class="card-text">Automatic watch, Ø 42.00 mm, Stainless steel.</p>
-          <p>$ 3,50,000</p>
-        </div>
-      </div>
   </div>
   <div class="row gx-0">
     <div class="col-12 col-md-6">
       <a href="#" class="text-decoration-none text-white">
         <div class="position-relative text-center">
           <img class="img-fluid w-100" src="{% static 'img/men.jpg' %}" alt="Men">
-          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">MEN</h3>
+          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">MEN
+          </h3>
         </div>
       </a>
     </div>
@@ -104,13 +33,14 @@
       <a href="#" class="text-decoration-none text-white">
         <div class="position-relative text-center">
           <img class="img-fluid w-100" src="{% static 'img/women.jpg' %}" alt="Women">
-          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">WOMEN</h3>
+          <h3 class="position-absolute bottom-0 start-50 translate-middle-x bg-dark bg-opacity-50 w-100 py-2 m-0">WOMEN
+          </h3>
         </div>
       </a>
     </div>
   </div>
-  
-  
+
+
 </div>
 
 {% endblock %}

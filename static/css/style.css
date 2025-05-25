@@ -1,85 +1,95 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.navbar{
+.navbar {
     width: 100%;
     max-width: 100%;
 }
+
 .navbar-collapse .navbar-nav {
     margin-left: auto;
     margin-right: auto;
-  }
-.nav-link{
+}
+
+.nav-link {
     font-size: 20px;
     color: black;
     padding-left: 1rem;
     padding-right: 1rem;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     transform: scale(1.1);
     transition: 0.5s;
     color: black;
     text-shadow: 0 0 20px black;
-    
+
 }
+
 .navbar-nav .nav-item .nav-link {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+}
 
-.container-fluid img{
+.container-fluid img {
     height: 5rem;
     width: 5rem;
     mix-blend-mode: multiply;
     padding-left: 1rem;
 }
 
-.carousel-item{
+.carousel-item {
     height: 100vh;
     width: 100%;
 }
-.carousel-item img{
-    width:100%;
+
+.carousel-item img {
+    width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: center;
 }
-.carousel-item h5{
+
+.carousel-item h5 {
     font-weight: bolder;
     font-size: 20px;
-    
+
 }
-.carousel-item p{
+
+.carousel-item p {
     font-size: 20px;
     text-shadow: 0 0 20px black;
 }
-.container-card{
+
+.container-card {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.container-card .card{
+.container-card .card {
     border-radius: 10%;
 }
-.container-card .card img{
+
+.container-card .card img {
     width: 100%;
     min-height: 20rem;
     object-fit: cover;
     object-position: center;
     border-radius: 10%;
 }
-.container-card .card:hover{
+
+.container-card .card:hover {
     transform: scale(1.1);
     transition: 0.5s;
     box-shadow: 0 0 30px black;
 }
 
-.collection{
+.collection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,23 +97,24 @@
     gap: 1rem;
 }
 
-.collection .card{
+.collection .card {
     box-shadow: inset 0 0 20px grey;
     position: relative;
 }
 
-.collection .card-body h5{
+.collection .card-body h5 {
     font-size: 20px;
     font-weight: bolder;
 }
-.collection .card-body p{
+
+.collection .card-body p {
     font-size: 14px;
     font-weight: lighter;
     font-family: serif;
     word-spacing: 5px;
 }
 
-.servises{
+.servises {
     height: 10rem;
     width: 100%;
     /* border: 1px solid black; */
@@ -113,10 +124,10 @@
     gap: 5rem;
     align-items: center;
     flex-wrap: wrap;
-    
+
 }
 
-.servises .ser1{
+.servises .ser1 {
     /* border: 1px solid black; */
     height: 90%;
     width: 20%;
@@ -125,14 +136,15 @@
     align-items: center;
     flex-direction: column;
 }
-.servises .ser1 img{
+
+.servises .ser1 img {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
     object-position: center;
 }
 
-.container1 .row{
+.container1 .row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,7 +153,7 @@
     position: relative;
 }
 
-.container1 .row .col-12{
+.container1 .row .col-12 {
     height: 70vh;
     width: 50%;
     /* border: 1px solid black; */
@@ -151,7 +163,8 @@
     flex-direction: column;
 
 }
-.container1 .col-12 p{
+
+.container1 .col-12 p {
     font-size: 20px;
     background-color: rgb(245, 212, 151);
     font-weight: normal;
@@ -159,7 +172,8 @@
     width: 76%;
     border-radius: 50%;
 }
-.container1 img{
+
+.container1 img {
     height: 70%;
     width: 80%;
     object-fit: cover;
@@ -167,13 +181,13 @@
 }
 
 .container2 {
-    height:100%;
+    height: 100%;
     width: 100%;
     flex-wrap: wrap;
 
 }
 
-.container2 .row{
+.container2 .row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,16 +197,18 @@
     width: 100%;
 }
 
-.container2 .col{
-    height: 100%;    width: 50%;
+.container2 .col {
+    height: 100%;
+    width: 50%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
-    align-items: center;    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
 }
 
 
-.container2 form{
+.container2 form {
     background-image: url('../img/contactus.jpg');
     background-size: cover;
     background-position: center;
@@ -208,13 +224,14 @@
 
 }
 
-.container2 .img-fluid{
+.container2 .img-fluid {
     height: 60%;
     width: 80%;
     object-fit: cover;
     object-position: center;
 }
-.container2 input{
+
+.container2 input {
     width: 70%;
     height: 3rem;
     border-radius: 10px;
@@ -225,7 +242,7 @@
     background-color: rgb(248, 240, 225);
 }
 
-.container2 textarea{
+.container2 textarea {
     width: 60%;
     height: 10rem;
     border-radius: 10px;
@@ -236,63 +253,90 @@
     background-color: rgb(248, 240, 225);
 }
 
-.warpper{
+.warpper {
     height: 100%;
     width: 100%;
 }
-.warpper .card:hover{
+
+.warpper .card:hover {
     transform: scale(1.1);
     transition: 0.5s;
     cursor: pointer;
-    
+
 }
 
-.warpper .text{
+.warpper .text {
     position: absolute;
 }
-.collector{
+
+.collector {
     height: 100%;
     width: 100%;
 
 }
 
-.row img{
+.row img {
     /* border: 1px solid black; */
     height: 90%;
     width: 100%;
 }
 
-.login{
-    height:90%;
+.login {
+    height: 90%;
     width: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: start;
     align-items: center;
 }
-.login img{
+
+.login img {
     height: 20vh;
     width: 10vw;
 }
-.login input, .login button{
+
+.login input,
+.login button {
     /* padding: 5px;
     border-radius: 10px; */
     border-color: #198754;
 }
 
-.register{
+.register {
     height: 100%;
     width: 100%;
 }
 
-.reg{
+.reg {
     /* border: 1px solid black; */
     height: 110vh;
 
 }
 
-.reg .img-fluid{
-    height:100vh;
+.reg .img-fluid {
+    height: 100vh;
     width: 100%;
 
+}
+
+.card-img-top {
+    height: 200px;
+    /* or any height you prefer */
+    object-fit: cover;
+}
+
+.carousel-item img {
+    height: 1000px;
+    /* consistent height for carousel */
+    
+}
+
+.ser1 img {
+    height: 100px;
+    object-fit: contain;
+}
+
+.rounded-start {
+    height: 100%;
+    object-fit: cover;
 }
