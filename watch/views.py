@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 # Create your views here.
 
@@ -22,10 +22,26 @@ def contact(request):
     return render(request,'watch/contact.html')
 
 def login(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        try:
+            customer = Customer.objects.get(email=email, password=password)
+            return render(request, 'watch/home.html', {'customer': customer}) 
+        except Customer.DoesNotExist:
+            return render(request, 'watch/login.html', {'error': 'Invalid credentials'})
     return render(request, 'watch/login.html')
 
 def signup(request):
     return render(request, 'watch/signup.html')
+
+def logout(request):
+    request.session.flush()
+    return redirect('home')
+
+def kids(request):
+    products = Products.objects.filter(category='Kids')
+    return render(request, 'watch/kids.html', {'products': products})
 
 def submit_register(request):
     if request.method == "POST":
@@ -47,7 +63,7 @@ def submit_register(request):
         )
         try:
             customer.save()
-            return render(request,'watch/home.html')
+            return render(request,'watch/login.html')
         except:
             return render(request,'watch/home.html')
     return render(request,'watch/home.html')
@@ -95,3 +111,4 @@ def submit_product(request):
         except:
             return render(request, 'watch/product.html')
     return render(request, 'watch/product.html')
+

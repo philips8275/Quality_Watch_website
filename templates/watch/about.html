@@ -3,58 +3,98 @@
 {% load static %}
 
 {% block content %}
-<div class="container py-5">
-    <!-- OUR MISSION -->
-    <div class="row align-items-center mb-5 shadow rounded p-4 bg-light">
-        <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <img class="img-fluid rounded" src="{% static 'img/about.jpg' %}" alt="Our Mission">
-        </div>
-        <div class="col-12 col-md-6">
-            <h2 class="text-primary text-center mb-3">OUR MISSION</h2>
-            <p class="text-muted text-center">
-                Welcome to our watch store! We are passionate about providing you with the finest selection of
-                timepieces that combine style, functionality, and craftsmanship.
-            </p>
-        </div>
-    </div>
+<div class="py-5" style="background: linear-gradient(to bottom right, #f8f9fa, #fff); font-family: cursive;">
+    <div class="container">
 
-    <!-- OUR VISION -->
-    <div class="row align-items-center mb-5 shadow rounded p-4 bg-white flex-md-row-reverse">
-        <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <img class="img-fluid rounded" src="{% static 'img/vision.jpg' %}" alt="Our Vision">
+        <!-- OUR MISSION -->
+        <div class="row mb-5 align-items-center py-4 border-bottom">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <img src="{% static 'img/about.jpg' %}" alt="Our Mission"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 280px; object-fit: cover; width: 100%;">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+                <h2 class="display-5 fw-bold text-primary text-center">OUR MISSION</h2>
+                <p class="fs-5 text-secondary w-50 text-center mx-auto">
+                    We are committed to offering timepieces that reflect timeless elegance, unmatched craftsmanship, and enduring quality—so you never miss a moment.
+                </p>
+            </div>
         </div>
-        <div class="col-12 col-md-6">
-            <h2 class="text-success text-center mb-3">OUR VISION</h2>
-            <p class="text-muted text-center">
-                We aim to be more than just a watch seller; we curate experiences, blending craftsmanship, timeless design,
-                and exceptional customer service to elevate your journey with every tick.
-            </p>
-        </div>
-    </div>
 
-    <!-- OUR VALUES -->
-    <div class="row align-items-center mb-5 shadow rounded p-4 bg-light">
-        <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <img class="img-fluid rounded" src="{% static 'img/values.jpg' %}" alt="Our Values">
+        <!-- BRAND STORY -->
+        <div class="row mb-5 align-items-center py-4 border-bottom">
+            <div class="col-md-6 order-md-2 mb-3 mb-md-0">
+                <img src="{% static 'img/story.png' %}" alt="Our Story"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 280px; object-fit: cover; width: 100%;">
+            </div>
+            <div class="col-md-6 order-md-1 text-center text-md-start ">
+                <h2 class="display-5 fw-bold text-primary text-center">OUR STORY</h2>
+                <p class="fs-5 text-secondary text-center w-50 mx-auto">
+                    Founded by watch enthusiasts, our journey began with a single goal: to bring premium timepieces to everyday people. What started as a small collection is now a curated showcase of excellence.
+                </p>
+            </div>
         </div>
-        <div class="col-12 col-md-6">
-            <h2 class="text-warning text-center mb-3">OUR VALUES</h2>
-            <p class="text-muted text-center">
-                Integrity, transparency, and a relentless pursuit of quality define us. Every timepiece is ethically sourced and
-                meticulously inspected to meet the highest standards.
-            </p>
-        </div>
-    </div>
 
-    <!-- OUR TEAM -->
-    <div class="row justify-content-center mb-5 shadow rounded p-4 bg-white">
-        <div class="col-12 col-md-10 text-center">
-            <h2 class="text-info mb-3">OUR TEAM</h2>
-            <p class="text-muted">
-                Behind every exceptional watch is our team—horologists, sales professionals, and designers—all driven by passion and precision.
-                Their dedication brings each masterpiece to your wrist.
-            </p>
+        <!-- OUR VISION -->
+        <div class="row mb-5 align-items-center py-4 border-bottom">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <img src="{% static 'img/vision.jpg' %}" alt="Our Vision"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 280px; object-fit: cover; width: 100%;">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+                <h2 class="display-5 fw-bold text-primary text-center">OUR VISION</h2>
+                <p class="fs-5 text-secondary text-center w-50 mx-auto">
+                    We aim to redefine the way people view watches—not just as accessories, but as personal symbols of ambition, heritage, and style.
+                </p>
+            </div>
         </div>
+
+        <!-- OUR VALUES -->
+        <div class="row mb-5 align-items-center py-4 border-bottom">
+            <div class="col-md-6 order-md-2 mb-3 mb-md-0">
+                <img src="{% static 'img/values.jpg' %}" alt="Our Values"
+                     class="img-fluid rounded-4 shadow"
+                     style="max-height: 280px; object-fit: cover; width: 100%;">
+            </div>
+            <div class="col-md-6 order-md-1 text-center text-md-start">
+                <h2 class="display-5 fw-bold text-primary text-center">OUR VALUES</h2>
+                <p class="fs-5 text-secondary text-center w-50 mx-auto">
+                    Honesty. Precision. Commitment. From ethically sourced materials to expert customer service, our values are built into every timepiece and every interaction.
+                </p>
+            </div>
+        </div>
+
+        <!-- TESTIMONIALS -->
+        <div class="row mb-5 py-4 border-bottom w-50 mx-auto">
+            <div class="col text-center w-25">
+                <h2 class="display-5 fw-bold text-primary">CUSTOMER LOVE</h2>
+                <blockquote class="blockquote">
+                    <p class="fs-5 fst-italic text-danger">
+                        “I ordered a vintage watch and was blown away by the quality and packaging. These people care about details.”
+                    </p>
+                    <footer class="blockquote-footer text-dark">– Arjun M., Bangalore</footer>
+                </blockquote>
+                <blockquote class="blockquote">
+                    <p class="fs-5 fst-italic text-danger">
+                        “Customer service was outstanding. They helped me find the perfect anniversary gift!”
+                    </p>
+                    <footer class="blockquote-footer text-dark">– Priya K., Mumbai</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- SUSTAINABILITY -->
+        <div class="row mb-4 py-4 w-50 mx-auto">
+            <div class="col text-center w-50">
+                <h2 class="display-5 fw-bold text-primary">OUR COMMITMENT TO SUSTAINABILITY</h2>
+                <p class="fs-5 text-danger">
+                    We believe in timeless quality that doesn't cost the Earth. From eco-friendly packaging to sustainable sourcing, we’re building a future where elegance meets ethics.
+                </p>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

@@ -10,7 +10,8 @@
         </div>
         <div class="col-md-6">
             <div class="login">
-                <form>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
                     <div class="text-center mb-3">
                         <img src="{% static 'img/loginlogo.png' %}" class="rounded" alt="loginimage">
                     </div>

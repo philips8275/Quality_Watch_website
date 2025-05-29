@@ -17,38 +17,50 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-dark navbar-light bg-body-dark">
     <div class="container-fluid">
-      <h3 class="text-light md-10">QUALITY <br> WATCHES</h4> 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'home'%}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'product'%}">Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'servises'%}">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about'%}">About us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{%url 'contact'%}">Contact us</a>
-          </li>
-        </ul>
+      <h3 class="text-light md-10">QUALITY <br> WATCHES</h4>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{%url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'product'%}">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servises'%}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about'%}">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'contact'%}">Contact us</a>
+            </li>
+          </ul>
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-dark btn-outline-light btn-light" type="submit">
-            Search
-          </button>
-        </form>
-        <a href="{%url 'login'%}"><button class="btn btn-dark btn-outline-light btn-light m-2" type="button">Login</button></a>
-      </div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-dark btn-outline-light btn-light me-2" type="submit">
+              Search
+            </button>
+          </form>
+
+          {% if customer %}
+
+          <h6 class="text-light">Welcome, {{ customer.name }}!</h6>
+          <a href="{% url 'logout' %}">
+            <button class="btn btn-dark btn-outline-light btn-light m-2" type="button">Logout</button>
+          </a>
+          {% else %}
+          <a href="{% url 'login' %}">
+            <button class="btn btn-dark btn-outline-light btn-light m-2" type="button">Login</button>
+          </a>
+          {% endif %}
+
+        </div>
     </div>
   </nav>
 
