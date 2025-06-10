@@ -6,12 +6,16 @@ def index(request):
     return render(request, 'watch/index.html')
 
 def home(request):
-    return render(request, 'watch/home.html')
+    images = Brand.objects.all()
+    return render(request, 'watch/home.html',{'brand_images':images})
 
 def product(request):
     products = Products.objects.all()
     return render(request,'watch/product.html', {'products': products})
 
+def catalog(request):
+    products = Products.objects.all()
+    return render(request, 'watch/catalog.html',{'products':products})
 def servises(request):
     return render(request,'watch/servises.html')
 
@@ -22,12 +26,13 @@ def contact(request):
     return render(request,'watch/contact.html')
 
 def login(request):
+    images=Brand.objects.all()
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
         try:
             customer = Customer.objects.get(email=email, password=password)
-            return render(request, 'watch/home.html', {'customer': customer}) 
+            return render(request, 'watch/home.html', {'customer': customer, 'brand_images':images} ) 
         except Customer.DoesNotExist:
             return render(request, 'watch/login.html', {'error': 'Invalid credentials'})
     return render(request, 'watch/login.html')
@@ -42,6 +47,15 @@ def logout(request):
 def kids(request):
     products = Products.objects.filter(category='Kids')
     return render(request, 'watch/kids.html', {'products': products})
+
+def ladies(request):
+    products = Products.objects.filter(category='ladies')
+    return render(request, 'watch/kids.html', {'products': products})
+
+def mens(request):
+    products = Products.objects.filter(category='mens')
+    return render(request, 'watch/kids.html', {'products': products})
+
 
 def submit_register(request):
     if request.method == "POST":

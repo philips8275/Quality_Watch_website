@@ -1,0 +1,127 @@
+{%extends 'watch/index.html'%}
+{% block title %} View Catalog {% endblock %}
+{%load static%}
+{% block content %}
+<div class="container m-2">
+    <div class="justify-content-center align-content-center">
+        <!-- Fixed: Changed 'src' to 'href' and made it a proper anchor tag -->
+        <a href="#allwatches" class="btn btn-outline-dark btn-light active">ALL WATCHES</a>
+        <!-- Fixed: Changed href from '#kids' to '#luxury' to match section -->
+        <a href="#kids" class="btn btn-outline-dark btn-light">Kids</a>
+        <!-- Fixed: Changed buttons to anchor tags for consistency -->
+        <a href="#mens" class="btn btn-outline-dark btn-light">Mens</a>
+        <a href="#ladies" class="btn btn-outline-dark btn-light">Ladies</a>
+    </div>
+</div>
+
+<!-- All Watches Section -->
+<section id="allwatches" class="catalog">
+    <div class="row justify-content-center align-content-center m-5">
+        {% for product in products %}
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 rounded-3 shadow-sm">
+                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                <div class="card-body d-flex flex-column text-center p-3">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                    <!-- Fixed: Added 'mt-auto' to push button to bottom -->
+                    <a href="{% url 'submit_product' product.id %}" class="btn btn-primary mt-auto">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Luxury Section (renamed from 'kids')  -->
+<section id="kids" class="catalog" style="display: none">
+    <div class="row justify-content-center align-content-center m-5">
+        {% for product in products %} {% if product.category|lower == 'kids' %}
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 rounded-3 shadow-lg">
+                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                <div class="card-body d-flex flex-column text-center p-3">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                    <a href="{% url 'submit_product' product.id %}" class="btn btn-primary mt-auto">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+</section>
+
+<!-- Sport Section -->
+<section id="mens" class="catalog" style="display: none">
+    <div class="row justify-content-center align-content-center m-5">
+        {% for product in products %}
+        {% if product.category|lower == 'mens' %}
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 rounded-3 shadow-lg">
+                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                <div class="card-body d-flex flex-column text-center p-3">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                    <a href="{% url 'submit_product' product.id %}" class="btn btn-primary mt-auto">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+</section>
+
+<!-- Classic Section -->
+<section id="ladies" class="catalog" style="display: none">
+    <div class="row justify-content-center align-content-center m-5">
+        {% for product in products %} 
+        {% if product.category|lower == 'ladies' %}
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 rounded-3 shadow-lg">
+                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}" />
+                <div class="card-body d-flex flex-column text-center p-3">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                    <a href="{% url 'submit_product' product.id %}" class="btn btn-primary mt-auto">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".btn-outline-dark");
+        const sections = document.querySelectorAll(".catalog");
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Remove active class from all buttons
+                filterButtons.forEach((btn) => btn.classList.remove("active"));
+                // Add active class to clicked button
+                this.classList.add("active");
+
+                // Hide all sections
+                sections.forEach((section) => {
+                    section.style.display = "none";
+                });
+
+                // Show the selected section
+                const targetId = this.getAttribute("href").substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}

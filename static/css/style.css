@@ -8,6 +8,7 @@
 .navbar {
     width: 100%;
     max-width: 100%;
+    background-image: linear-gradient(to right,#8f94fb , #2193b0, #1cefff);
     
 }
 .navbar h3 {
@@ -26,7 +27,7 @@
 .navbar-nav .nav-item .nav-link,
 .nav-link {
     font-size: 20px;
-    color: rgb(226, 226, 226);
+    color: black;
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -151,33 +152,37 @@
 }
 
 /* Footer and Social Links */
-.bg-gradient-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.bg {
+    background-image: linear-gradient(to right,#8f94fb , #2193b0, #1cefff);
+
+
 }
+
 
 .brand-name {
     font-family: 'Times New Roman', serif;
     letter-spacing: 1px;
+    color: rgb(251, 250, 250);
 }
 
 .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
 }
 
 .social-link:hover {
-    background: #667eea;
+    background: white;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px white;
 }
 
 .footer-links {
@@ -187,18 +192,18 @@
 }
 
 .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 }
 
 .footer-link {
-    color: #adb5bd;
+    color: whitesmoke;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .footer-link:hover {
-    color: #667eea;
+    color: blue;
     padding-left: 10px;
 }
 
@@ -210,7 +215,7 @@
     transform: translateY(-50%);
     width: 0;
     height: 2px;
-    background: #667eea;
+    background: white;
     transition: width 0.3s ease;
 }
 
@@ -224,7 +229,7 @@
 }
 
 .contact-item i {
-    margin-top: 4px;
+    margin-top: 0;
     min-width: 20px;
 }
 
@@ -258,6 +263,14 @@
 
 .footer-section {
     height: 100%;
+}
+
+.warpper .col-6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 /* Cards and Containers */

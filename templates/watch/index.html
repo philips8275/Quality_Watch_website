@@ -18,8 +18,9 @@
   <nav class="navbar navbar-expand-lg bg-dark navbar-light bg-body-dark">
     <div class="container-fluid">
       <h3 class="text-light md-10">QUALITY <br> WATCHES</h4>
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,20 +44,20 @@
 
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-dark btn-outline-light btn-light me-2" type="submit">
+            <button class="btn btn-outline-dark btn-light m-2ac" type="submit">
               Search
             </button>
           </form>
 
           {% if customer %}
 
-          <h6 class="text-light">Welcome, {{ customer.name }}!</h6>
+          <h6 class="text-light-dark-50 m-2">Welcome,<br> {{ customer.name }}!</h6>
           <a href="{% url 'logout' %}">
-            <button class="btn btn-dark btn-outline-light btn-light m-2" type="button">Logout</button>
+            <button class="btn btn-outline-dark bg-light m-2" type="submit">Logout</button>
           </a>
           {% else %}
           <a href="{% url 'login' %}">
-            <button class="btn btn-dark btn-outline-light btn-light m-2" type="button">Login</button>
+            <button class="btn btn-outline-dark btn-light m-2" type="submit">Login</button>
           </a>
           {% endif %}
 
@@ -70,16 +71,16 @@
     {% endblock %}
   </main>
   <!-- Footer -->
-  <footer class="bg-dark text-light mt-5 rounded-3">
+  <footer class="bg text-light">
 
 
     <!-- Social Media Section -->
-    <section class="border-bottom border-secondary py-4">
+    <section class="border-bottom border-secondary py-3">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-3 mb-lg-0">
             <h6 class="fw-bold mb-2">Connect With Our Community</h6>
-            <p class="mb-0 text-white-50">Follow us for daily watch inspiration and exclusive content</p>
+            <p class="mb-0 text-light">Follow us for daily watch inspiration and exclusive content</p>
           </div>
           <div class="col-lg-6 text-lg-end">
             <div class="social-links">
@@ -95,9 +96,6 @@
               <a href="#" class="social-link me-3" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
               </a>
-              <a href="#" class="social-link me-3" aria-label="Pinterest">
-                <i class="fab fa-pinterest"></i>
-              </a>
               <a href="#" class="social-link" aria-label="TikTok">
                 <i class="fab fa-tiktok"></i>
               </a>
@@ -108,7 +106,7 @@
     </section>
 
     <!-- Main Footer Content -->
-    <section class="py-5">
+    <section class="py-3">
       <div class="container">
         <div class="row">
           <!-- Company Info -->
@@ -118,19 +116,22 @@
                 <i class="fas fa-clock me-3 text-primary"></i>
                 <span class="brand-name">TimeCraft</span>
               </h5>
-              <p class="text-white-50 mb-4">
+              <p class="text-white mb-4">
                 Curating exceptional timepieces since 1985. We bring you the finest collection of watches from renowned
                 manufacturers worldwide, combining heritage craftsmanship with contemporary design.
               </p>
               <div class="quality-badges">
-                <span class="badge bg-primary me-2 mb-2">
+                <span class="badge bg-white text-dark me-2 mb-2">
                   <i class="fas fa-certificate me-1"></i>Authorized Dealer
                 </span>
-                <span class="badge bg-success me-2 mb-2">
+                <span class="badge bg-white text-dark me-2 mb-2">
                   <i class="fas fa-shield-alt me-1"></i>2 Year Warranty
                 </span>
-                <span class="badge bg-warning text-dark mb-2">
+                <span class="badge bg-white text-dark mb-2">
                   <i class="fas fa-gem me-1"></i>Premium Quality
+                </span>
+                <span class="badge bg-white text-dark mb-2">
+                  <i class="fas fa-gem me-1"></i>Best Price Guarantee
                 </span>
               </div>
             </div>
@@ -174,22 +175,22 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="footer-section">
               <h6 class="fw-bold mb-4 text-uppercase">Get In Touch</h6>
-              <div class="contact-info mb-4">
-                <div class="contact-item mb-3">
+              <div class="contact-info mb-1">
+                <div class="contact-item mb-1">
                   <i class="fas fa-map-marker-alt text-primary me-3"></i>
                   <div>
                     <strong>Flagship Store</strong><br>
                     <span class="text-white-50">123 Luxury Avenue, Mumbai, Maharashtra 400001</span>
                   </div>
                 </div>
-                <div class="contact-item mb-3">
+                <div class="contact-item mb-1">
                   <i class="fas fa-phone text-primary me-3"></i>
                   <div>
                     <strong>Customer Service</strong><br>
                     <a href="tel:+91-22-1234-5678" class="text-white-50">+91 22 1234 5678</a>
                   </div>
                 </div>
-                <div class="contact-item mb-3">
+                <div class="contact-item mb-1">
                   <i class="fas fa-envelope text-primary me-3"></i>
                   <div>
                     <strong>Email Support</strong><br>
@@ -204,40 +205,26 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Payment Methods -->
-              <div class="payment-methods">
-                <h6 class="fw-bold mb-3 text-uppercase">Secure Payments</h6>
-                <div class="payment-icons">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa"
-                    class="payment-icon">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
-                    class="payment-icon">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                    alt="American Express" class="payment-icon">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
-                    class="payment-icon">
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Copyright Section -->
-    <section class="bg-white py-3">
+    <section class="bg-white py-1">
       <div class="container">
         <div class="row align-items-center mb-2 border-1-black">
           <div class="col-md-6 mb-2 mb-md-0">
-            <p class="mb-0 text-black-50">
+            <p class="mb-0 text-black">
               © 2024 TimeCraft. All rights reserved.
-              <a href="#" class="text-black-50">Privacy Policy</a> |
-              <a href="#" class="text-black-50">Terms of Service</a>
+              <a href="#" class="text-black">Privacy Policy</a> |
+              <a href="#" class="text-black">Terms of Service</a>
             </p>
           </div>
           <div class="col-md-6 text-md-end">
-            <p class="mb-0 text-black-50">
+            <p class="mb-0 text-black">
               Designed with <i class="fas fa-heart text-danger"></i> for watch enthusiasts
             </p>
           </div>
