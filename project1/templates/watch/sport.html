@@ -1,0 +1,28 @@
+{% extends 'watch/index.html' %}
+{% load static %}
+
+{% block title %} Sports Watches {% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="row justify-content-center align-content-center m-5">
+    {% for product in products%}
+    <div class="col-12 col-md-4 mb-4">
+      <div class="card1 h-80 rounded-3 shadow-lg">
+        <img src="{{ product.image.url }}" class="card-img-top-fluid img-thumbnail" alt="{{ product.name }}">
+        <div class="card-body align-content-center text-center p-2">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+          <a href="{% url 'submit_product' product.id %}" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+
+  </div>
+</div>
+
+
+{% endblock %}

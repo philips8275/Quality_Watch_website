@@ -1,0 +1,41 @@
+{% extends 'watch/index.html' %}
+{% block title %} Contact Us {% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center justify-content-center shadow-lg p-4 rounded bg-light">
+        <!-- Image Section -->
+        <div class="col-md-5 mb-4 mb-md-0">
+            <img class="img-fluid rounded-3" src="{% static 'img/contact.jpg' %}" alt="Contact Us">
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4 text-primary">Get in Touch</h2>
+                    <form action="{% url 'submit_contact' %}" method="post" onsubmit="Contact_submit(event)">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

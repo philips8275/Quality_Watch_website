@@ -1,0 +1,261 @@
+{% extends 'watch/index.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container-fluid px-3 px-md-4">
+  <!-- Hero Carousel -->
+  <section class="row mt-3">
+    <div class="col-12">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner rounded-3 shadow-lg">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="position-relative">
+              <img src="{% static 'img/greenwatch.jpg' %}" class="d-block w-100 h-100"
+                style="height: 500px; object-fit: cover;" alt="Classic Timepieces">
+              <div class="carousel-overlay">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                  <h1 class="display-4 fw-bold mb-3 text-shadow">Timeless Elegance</h1>
+                  <p class="fs-5 mb-4 text-shadow">Discover our curated collection of classic watches that define
+                    sophistication and style.</p>
+                  <div>
+                    <a href="{% url 'product' %}" class="btn btn-light btn-lg me-3 px-4">Shop Now</a>
+                    <a href="{%url 'servises'%}" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="position-relative">
+              <img src="{% static 'img/blue.jpg' %}" class="d-block w-100 h-100"
+                style="height: 500px; object-fit: cover;" alt="Premium Luxury Watches">
+              <div class="carousel-overlay">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                  <h1 class="display-4 fw-bold mb-3 text-shadow">Luxury Redefined</h1>
+                  <p class="fs-5 mb-4 text-shadow">Elevate your style with our premium collection crafted for the
+                    discerning individual.</p>
+                  <div>
+                    <a href="{% url 'product' %}" class="btn btn-light btn-lg me-3 px-4">Explore Collection</a>
+                    <a href="{%url 'catalog' %}" class="btn btn-outline-light btn-lg px-4">View Catalog</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="position-relative">
+              <img src="{% static 'img/pinkwatch.jpg' %}" class="d-block w-100 h-100"
+                style="height: 500px; object-fit: cover;" alt="Kids Collection">
+              <div class="carousel-overlay">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                  <h1 class="display-4 fw-bold mb-3 text-shadow">Kids Collection</h1>
+                  <p class="fs-5 mb-4 text-shadow">Fun and colorful timepieces designed especially for young
+                    adventurers.</p>
+                  <div>
+                    <a href="{% url 'kids' %}" class="btn btn-light btn-lg me-3 px-4">Explore Collection</a>
+                    <a href="{% url 'size' %}" class="btn btn-outline-light btn-lg px-4">Size Guide</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Brands -->
+  <section class="row mt-5 mb-5">
+    
+      <div class="col-12 text-center mb-4">
+        <h2 class="display-5 fw-bold text-dark">Featured Brands</h2>
+        <p class="text-muted fs-5">Discover watches from the world's most prestigious manufacturers</p>
+      </div>
+      <div class="d-flex flex-row flex-nowrap overflow-auto">
+        {% for img in brand_images %}
+        <div class="mb-4 px-2">
+          <div class="card shadow-sm justify-content-center align-item-center" style="width: 270px; height: 340px;">
+            <img src="{{ img.img.url }}" class="mx-auto d-block" style="width: 98%; height: 98%; object-fit: cover;"
+              alt="Premium Watch Brand">
+              
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    
+  </section>
+
+  <!-- Watch Categories -->
+  <section class="row mt-5 mb-5">
+    <div class="col-12 text-center mb-5">
+      <h2 class="display-5 fw-bold text-dark">Shop by Style</h2>
+      <p class="text-muted fs-5">Find the perfect watch for every occasion and personality</p>
+    </div>
+
+    <!-- Workwear Collection -->
+    <div class="col-lg-6 mb-4">
+      <div class="card border-0 h-100 category-card">
+        <div class="row g-0 h-100">
+          <div class="col-md-5">
+            <img src="{% static 'img/Workwear.jpg' %}" class="img-fluid h-100 rounded-start" style="object-fit: cover;"
+              alt="Professional Workwear Watches">
+          </div>
+          <div class="col-md-7" style="background-image: linear-gradient(to right, #FFEFBA, #FFEFBA);">
+            <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+              <div class="category-badge mb-3">
+                <span class="badge bg-primary fs-6 px-3 py-2">PROFESSIONAL</span>
+              </div>
+              <h3 class="card-title fw-bold mb-3">Workwear Collection</h3>
+              <p class="card-text text-muted mb-4">Precision-engineered timepieces built for the modern professional.
+                Combining durability with sophisticated design for everyday excellence.</p>
+              <a href="{% url 'professional' %}" class="btn btn-outline-primary btn-lg">Explore collection</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stylish & Bold -->
+    <div class="col-lg-6 mb-4">
+      <div class="card border-0 shadow-sm h-100 category-card">
+        <div class="row g-0 h-100">
+          <div class="col-md-5">
+            <img src="{% static 'img/stylish.jpg' %}" class="img-fluid h-100 rounded-start" style="object-fit: cover;"
+              alt="Trendy Stylish Watches">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+              <div class="category-badge mb-3">
+                <span class="badge bg-success fs-6 px-3 py-2">TRENDY</span>
+              </div>
+              <h3 class="card-title fw-bold mb-3">Stylish & Bold</h3>
+              <p class="card-text text-muted mb-4">Make a statement with avant-garde designs and contemporary
+                aesthetics. Perfect for those who dare to be different.</p>
+              <a href="{% url 'trendy' %}" class="btn btn-outline-success btn-lg">Shop Stylish</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grandmaster Series -->
+    <div class="col-lg-6 mb-4">
+      <div class="card border-0 shadow-sm h-100 category-card">
+        <div class="row g-0 h-100">
+          <div class="col-md-5">
+            <img src="{% static 'img/manlywatch.jpg' %}" class="img-fluid h-100 rounded-start"
+              style="object-fit: cover;" alt="Luxury Grandmaster Watches">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+              <div class="category-badge mb-3">
+                <span class="badge bg-warning text-dark fs-6 px-3 py-2">LUXURY</span>
+              </div>
+              <h3 class="card-title fw-bold mb-3">Grandmaster Series</h3>
+              <p class="card-text text-muted mb-4">Exceptional craftsmanship meets unparalleled luxury. These
+                masterpieces are designed for leaders and connoisseurs.</p>
+              <a href="{% url 'luxuary'%}" class="btn btn-outline-warning btn-lg">View Grandmaster</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formal Elegance -->
+    <div class="col-lg-6 mb-4">
+      <div class="card border-0 shadow-sm h-100 category-card">
+        <div class="row g-0 h-100">
+          <div class="col-md-5">
+            <img src="{% static 'img/formal.jpg' %}" class="img-fluid h-100 rounded-start" style="object-fit: cover;"
+              alt="Elegant Formal Watches">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body d-flex flex-column justify-content-center h-100 p-4">
+              <div class="category-badge mb-3">
+                <span class="badge bg-dark fs-6 px-3 py-2">ELEGANT</span>
+              </div>
+              <h3 class="card-title fw-bold mb-3">Formal Elegance</h3>
+              <p class="card-text text-muted mb-4">Refined sophistication for life's most important moments. Clean lines
+                and timeless design for the distinguished individual.</p>
+              <a href="{% url 'elegant'%}" class="btn btn-outline-dark btn-lg">Shop Formal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Guarantees -->
+  <section class="row mt-5 mb-5 py-5 bg-light rounded-3">
+    <div class="col-12 text-center mb-4">
+      <h2 class="display-6 fw-bold text-dark mb-3">Why Choose Us</h2>
+      <p class="text-muted fs-5">Your satisfaction is our commitment</p>
+    </div>
+
+    <div class="col-md-4 mb-4 text-center">
+      <div class="service-item p-4">
+        <div class="service-icon mb-3">
+          <img
+            src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dwc17b5cd2/images/homepage/Gurantee.svg"
+            class="img-fluid mb-3" style="height: 60px;" alt="Quality Guarantee">
+        </div>
+        <h4 class="fw-bold mb-3 text-primary">Authentic Quality</h4>
+        <p class="text-muted">Every timepiece comes with our guarantee of authenticity and superior craftsmanship. No
+          compromises on quality.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 text-center">
+      <div class="service-item p-4">
+        <div class="service-icon mb-3">
+          <img
+            src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw0987d956/images/homepage/Return.svg"
+            class="img-fluid mb-3" style="height: 60px;" alt="Easy Returns">
+        </div>
+        <h4 class="fw-bold mb-3 text-success">Easy Returns</h4>
+        <p class="text-muted">Not completely satisfied? Return your purchase within 7 days for a full refund. No
+          questions asked, hassle-free process.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4 text-center">
+      <div class="service-item p-4">
+        <div class="service-icon mb-3">
+          <img
+            src="https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw824f2669/images/homepage/Shipping.svg"
+            class="img-fluid mb-3" style="height: 60px;" alt="Free Shipping">
+        </div>
+        <h4 class="fw-bold mb-3 text-warning">Free Delivery</h4>
+        <p class="text-muted">Enjoy complimentary shipping on all orders. Your perfect timepiece delivered safely to
+          your doorstep at no extra cost.</p>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
