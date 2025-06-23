@@ -11,6 +11,17 @@ A Django-based web application for browsing, filtering, and managing a catalog o
 - Admin panel (with Jazzmin theme) for managing products, brands, and customers
 - Responsive HTML templates for all main pages
 
+## Screenshots
+
+_Add screenshots of your application here to showcase the interface and features._
+
+---
+
+## Images Folder
+
+The `images/` folder contains different images of watches used as products on the website.
+Add these images in the admin panel with the required information; then those images will be displayed on the product page.
+
 ## Project Structure
 
 ```
@@ -44,7 +55,7 @@ project1/
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/philips8275/Quality_Watch_website.git
-   cd Quality_Watch_website/
+   cd project1
    ```
 2. **Create and activate a virtual environment:**
    ```bash
